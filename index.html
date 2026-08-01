@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A Manim animation and illustrated paper explaining the integral of x squared.">
+  <title>Solving ∫x² dx — Manim Explainer</title>
+  <style>
+    :root{--bg:#111417;--panel:#1c1c1c;--text:#eef5f6;--muted:#aab8bc;--blue:#58c4dd;--green:#83c167;--yellow:#ffe34d;--coral:#ff6b6b;--line:#313a3d}
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 50% -10%,#263337 0,var(--bg) 42%);color:var(--text);font:16px/1.65 ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace}
+    a{color:var(--blue)} .wrap{width:min(1060px,calc(100% - 32px));margin:auto}
+    header{padding:72px 0 44px;text-align:center}
+    .eyebrow{color:var(--blue);font-size:.85rem;letter-spacing:.16em;text-transform:uppercase}
+    h1{font-size:clamp(2.2rem,7vw,5.2rem);line-height:1.05;margin:.25em 0;color:#fff}
+    .formula{color:var(--green);font:clamp(1.45rem,4vw,2.65rem)/1.2 Georgia,serif;margin:24px 0}
+    .lead{max-width:720px;margin:auto;color:var(--muted);font-family:system-ui,sans-serif;font-size:1.08rem}
+    .buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .button{display:inline-block;padding:11px 17px;border:1px solid var(--blue);border-radius:8px;text-decoration:none;color:var(--text);background:#58c4dd18}
+    .button.green{border-color:var(--green);background:#83c16718}.button:hover{transform:translateY(-1px);filter:brightness(1.18)}
+    section{padding:34px 0} h2{font-size:1.7rem;color:var(--yellow);margin:0 0 18px}
+    .card{background:linear-gradient(145deg,#1b2022,#171a1c);border:1px solid var(--line);border-radius:15px;padding:22px;box-shadow:0 18px 60px #0005}
+    video{display:block;width:100%;border-radius:10px;background:#000;aspect-ratio:16/9}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}.grid img{width:100%;display:block;border-radius:9px}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.step{padding:18px;border-left:3px solid var(--blue)}
+    .step:nth-child(2){border-color:var(--yellow)}.step:nth-child(3){border-color:var(--green)}
+    .step strong{display:block;color:#fff;margin-bottom:7px}.step span,p{color:var(--muted);font-family:system-ui,sans-serif}
+    footer{margin-top:42px;padding:34px 0;border-top:1px solid var(--line);color:var(--muted);text-align:center;font-size:.9rem}
+    @media(max-width:760px){header{padding-top:52px}.grid,.steps{grid-template-columns:1fr}.card{padding:14px}}
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="eyebrow">Manim + Calculus</div>
+    <h1>Solving ∫x² dx</h1>
+    <div class="formula">∫ x² dx = x³/3 + C</div>
+    <p class="lead">See the geometry, apply the power rule, and verify the answer by differentiation. This page pairs a short animation with a complete illustrated LaTeX paper.</p>
+    <div class="buttons">
+      <a class="button green" href="integral-x2-paper.pdf">Read the paper (PDF)</a>
+      <a class="button" href="https://github.com/AmtoriCode/manim-integral-x2">View the repository</a>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section>
+      <h2>Watch the explainer</h2>
+      <div class="card">
+        <video controls preload="metadata" poster="assets/geometry.png">
+          <source src="integral-x2-explainer.mp4" type="video/mp4">
+          Your browser does not support embedded video. <a href="integral-x2-explainer.mp4">Download it here.</a>
+        </video>
+      </div>
+    </section>
+
+    <section>
+      <h2>The idea in three moves</h2>
+      <div class="steps">
+        <div class="card step"><strong>1 — Accumulate area</strong><span>The integral tracks area under the parabola y = x². From 0 to a, that area is a³/3.</span></div>
+        <div class="card step"><strong>2 — Use the power rule</strong><span>Increase the exponent from 2 to 3, then divide by the new exponent: x³/3.</span></div>
+        <div class="card step"><strong>3 — Differentiate to check</strong><span>d/dx(x³/3 + C) = (1/3)(3x²) + 0 = x².</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>From geometry to algebra</h2>
+      <div class="grid">
+        <div class="card"><img src="assets/geometry.png" alt="Area under y equals x squared from zero to a"></div>
+        <div class="card"><img src="assets/final-answer.png" alt="Final result: integral of x squared equals x cubed over three plus C"></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Go deeper</h2>
+      <div class="card">
+        <p>The seven-page companion paper develops the rectangular Riemann sum, derives the power rule by reversing differentiation, explains the constant of integration, connects the result to the Fundamental Theorem of Calculus, and lists common mistakes.</p>
+        <div class="buttons"><a class="button green" href="integral-x2-paper.pdf">Open the full paper</a><a class="button" href="integral-x2-paper.tex">View LaTeX source</a><a class="button" href="manim_script.py">View Manim source</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap">Created with Manim Community Edition and LaTeX · Source available on GitHub</div></footer>
+</body>
+</html>
