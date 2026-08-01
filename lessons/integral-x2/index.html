@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A visual lesson explaining the integral of x squared.">
+  <title>The Integral of x² — Visual Math Lab</title>
+  <style>
+    :root{--bg:#111412;--panel:#1b1e1c;--text:#f3f1e9;--muted:#aaa99f;--line:#343a36;--blue:#58c4dd;--green:#83c167;--yellow:#ffe34d;--coral:#ff7770}
+    *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,sans-serif}a{color:var(--blue)}.wrap{width:min(1040px,calc(100% - 34px));margin:auto}.mono{font-family:"DejaVu Sans Mono",ui-monospace,monospace}
+    nav{height:70px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}nav a{text-decoration:none}.back{color:var(--muted)}
+    header{padding:70px 0 42px}.eyebrow{color:var(--blue);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase}h1{font:700 clamp(2.7rem,7vw,5.5rem)/1 Georgia,serif;margin:.18em 0}.formula{color:var(--green);font:clamp(1.5rem,4vw,2.7rem) Georgia,serif;margin:22px 0}.lead{color:var(--muted);font-size:1.08rem;max-width:760px}
+    section{padding:38px 0;border-top:1px solid var(--line)}h2{font:700 2rem Georgia,serif;color:var(--yellow);margin:0 0 18px}.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px}video{display:block;width:100%;aspect-ratio:16/9;background:#000;border-radius:9px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.button{display:inline-flex;padding:11px 15px;border:1px solid var(--green);border-radius:9px;text-decoration:none;color:var(--text)}.button.primary{background:var(--green);color:#101510;font-weight:800}.grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.grid img{width:100%;border-radius:8px;display:block}.steps{counter-reset:s;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{padding:20px;border-top:3px solid var(--blue)}.step:nth-child(2){border-color:var(--yellow)}.step:nth-child(3){border-color:var(--green)}.step h3{margin:0 0 8px}.step p{color:var(--muted);margin:0}footer{padding:38px 0;color:var(--muted);border-top:1px solid var(--line)}
+    @media(max-width:720px){.grid,.steps{grid-template-columns:1fr}header{padding-top:50px}}
+  </style>
+</head>
+<body><div class="wrap"><nav><a class="mono" href="../../">VISUAL <span style="color:var(--green)">MATH</span> LAB</a><a class="back" href="../../">← All math lessons</a></nav>
+<header><div class="eyebrow mono">Calculus · Foundations</div><h1>How do we solve ∫x² dx?</h1><div class="formula">∫ x² dx = x³/3 + C</div><p class="lead">See integration as accumulated area, derive the power rule, understand the constant of integration, and verify the result by differentiation.</p></header>
+<main><section><h2>Watch the visual explanation</h2><div class="card"><video controls preload="metadata" poster="assets/geometry.png"><source src="integral-x2-explainer.mp4" type="video/mp4">Your browser cannot play this video. <a href="integral-x2-explainer.mp4">Download it here.</a></video></div></section>
+<section><h2>The argument in three moves</h2><div class="steps"><div class="card step"><h3>Accumulate area</h3><p>The area under y=x² from 0 to a is a³/3, as a Riemann sum confirms.</p></div><div class="card step"><h3>Reverse the power rule</h3><p>Raise the exponent from 2 to 3 and divide by the new exponent.</p></div><div class="card step"><h3>Differentiate to verify</h3><p>d/dx(x³/3+C)=(1/3)(3x²)+0=x².</p></div></div></section>
+<section><h2>Geometry and conclusion</h2><div class="grid"><div class="card"><img src="assets/geometry.png" alt="Area under y equals x squared"></div><div class="card"><img src="assets/final-answer.png" alt="Integral of x squared equals x cubed over three plus C"></div></div></section>
+<section><h2>Study and reproduce it</h2><div class="card"><p style="color:var(--muted)">The seven-page paper includes the full Riemann-sum derivation, the Fundamental Theorem of Calculus, common mistakes, and examples. All source files are available.</p><div class="actions"><a class="button primary" href="integral-x2-paper.pdf">Read the paper</a><a class="button" href="integral-x2-paper.tex">LaTeX source</a><a class="button" href="manim_script.py">Manim source</a><a class="button" href="integral-x2-explainer.mp4">Download video</a></div></div></section></main>
+<footer><a href="../../">← Return to the Visual Math Lab</a></footer></div></body></html>

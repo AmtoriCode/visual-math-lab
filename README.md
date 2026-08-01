@@ -1,40 +1,51 @@
-# Solving $\int x^2\,dx$ with Manim
+# Visual Math Lab
 
-A visual and written explanation of why
+A growing, math-only library of visual explanations. Each question can become a reusable lesson with animation, written derivation, source code, and downloadable materials.
 
-$$
-\int x^2\,dx = \frac{x^3}{3}+C.
-$$
+## Website
 
-## View online
+**https://amtoricode.github.io/visual-math-lab/**
 
-**Interactive project page:** https://amtoricode.github.io/manim-integral-x2/
+Use the question box to search published lessons. If no lesson matches, it opens a pre-filled GitHub lesson request. Questions asked in the associated Hermes chat can also be developed and added to this same library.
 
-The page includes the complete 720p animation and a link to the full seven-page companion paper.
+## Published lessons
 
-## Repository contents
+| Topic | Question | Lesson |
+|---|---|---|
+| Calculus | How do we solve $\int x^2\,dx$? | [Open lesson](lessons/integral-x2/) |
 
-| File | Description |
-|---|---|
-| [`integral-x2-explainer.mp4`](integral-x2-explainer.mp4) | 53-second Manim animation (720p, 30 FPS) |
-| [`integral-x2-paper.pdf`](integral-x2-paper.pdf) | Seven-page illustrated companion paper |
-| [`integral-x2-paper.tex`](integral-x2-paper.tex) | LaTeX source for the paper |
-| [`manim_script.py`](manim_script.py) | Manim Community Edition source |
-| [`plan.md`](plan.md) | Narrative and visual design plan |
-| [`index.html`](index.html) | GitHub Pages presentation site |
+## Structure
 
-## What the explanation covers
+```text
+index.html                 General math homepage and question interaction
+lessons.json               Searchable lesson catalog
+lessons/
+  integral-x2/
+    index.html             Lesson page
+    integral-x2-explainer.mp4
+    integral-x2-paper.pdf
+    integral-x2-paper.tex
+    manim_script.py
+    assets/
+```
 
-1. The meaning of an antiderivative
-2. Accumulated area under $y=x^2$
-3. A Riemann-sum derivation of $a^3/3$
-4. The power rule for integration
-5. Why the constant of integration is necessary
-6. Verification by differentiation
-7. The Fundamental Theorem of Calculus
-8. Common mistakes and generalizations
+## Adding the next math question
 
-## Render the animation
+1. Create `lessons/<slug>/`.
+2. Add a lesson page and any video, paper, source, and images.
+3. Add one metadata object to `lessons.json`.
+4. The homepage automatically makes the lesson searchable.
+5. Commit and push; GitHub Pages republishes the library.
+
+## Local preview
+
+```bash
+python3 -m http.server 8765
+```
+
+Then visit `http://localhost:8765`.
+
+## Rendering Manim lessons
 
 Requires Python 3.10+, Manim Community Edition, LaTeX, and FFmpeg.
 
@@ -42,17 +53,8 @@ Requires Python 3.10+, Manim Community Edition, LaTeX, and FFmpeg.
 python3 -m venv .venv
 . .venv/bin/activate
 pip install -r requirements.txt
-manim -qm manim_script.py \
-  Scene1_Question Scene2_Geometry Scene3_PowerRule Scene4_Verify
-```
-
-## Compile the paper
-
-```bash
-pdflatex integral-x2-paper.tex
-pdflatex integral-x2-paper.tex
 ```
 
 ## License
 
-The project source is released under the MIT License.
+MIT

@@ -1,0 +1,13 @@
+[
+  {
+    "slug": "integral-x2",
+    "title": "The integral of x²",
+    "question": "How do we solve ∫x² dx?",
+    "summary": "Area, Riemann sums, the power rule, and verification by differentiation.",
+    "topic": "Calculus",
+    "level": "Foundations",
+    "formula": "∫ x² dx = x³/3 + C",
+    "href": "lessons/integral-x2/",
+    "poster": "lessons/integral-x2/assets/geometry.png"
+  }
+]
